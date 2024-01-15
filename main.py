@@ -4,12 +4,11 @@ from flask_restful import Api, Resource
 app = Flask(__name__)
 api = Api(app)
 
-names = {'jon': {'age': 24, 'gender': 'male'},
-         'mac': {'age': 70, 'gender': 'male'}}
+videos = {}
 
-class HelloWorld(Resource):
-  def get(self, name):
-    return names[name]
+class Video(Resource):
+  def get(self, video_id):
+    return videos[video_id]
   
   def post(self):
     return {'data': 'Posted'}
